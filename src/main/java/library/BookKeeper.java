@@ -5,12 +5,15 @@ import entity.Member;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BookKeeper {
 
     Member member;
     List<BookLendingRecord> active;
     List<BookLendingRecord> historical;
+
+    public static final int MAX_LIMIT_FOR_BOOK = 5;
 
     BookKeeper(Member member){
         this.member = member;
@@ -19,7 +22,7 @@ public class BookKeeper {
     }
 
     public boolean lendBook(BookItem bookItem){
-        if(active.size() < 5) {
+        if(active.size() < MAX_LIMIT_FOR_BOOK) {
             BookLendingRecord bookLendingRecord = new BookLendingRecord(bookItem, this.member);
             active.add(bookLendingRecord);
             return true;
@@ -38,6 +41,10 @@ public class BookKeeper {
             }
         }
         return false;
+    }
+
+    public List<BookItem> getCurrentlyLendedBooks(){
+        return this.active.stream().map(x->x.bookItem).collect(Collectors.toList());
     }
 
 
