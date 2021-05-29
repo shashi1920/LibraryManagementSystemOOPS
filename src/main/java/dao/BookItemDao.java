@@ -2,6 +2,7 @@ package dao;
 
 import library.BookItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookItemDao implements BaseDao<BookItem> {
@@ -28,5 +29,10 @@ public class BookItemDao implements BaseDao<BookItem> {
     @Override
     public void delete(BookItem item) {
 
+    }
+
+
+    public List<BookItem> findByBookId(Long bookId){
+        return new ArrayList<>();
     }
 }

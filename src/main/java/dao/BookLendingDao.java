@@ -39,8 +39,8 @@ public class BookLendingDao implements BaseDao<BookLendingRecord> {
         return new ArrayList<>();
     }
 
-    public List<BookLendingRecord> findByBook(Book book){
-        return new ArrayList<>();
+    public BookLendingRecord findLastLent(BookItem bookItem){
+        return null;
     }
 
     public List<BookLendingRecord> findByBookItem(BookItem bookItem){

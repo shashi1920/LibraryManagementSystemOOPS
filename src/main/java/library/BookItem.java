@@ -10,7 +10,7 @@ import lombok.Setter;
 @Builder
 public class BookItem extends Book{
 
-    String barCode;
+    Long barCode;
 
     BookStatus status;
 

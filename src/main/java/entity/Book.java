@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Setter @Getter @NoArgsConstructor @Builder
 public class Book {
 
-    String id;
+    Long id;
     String title;
     Publisher publisher;
-    Author author;
+    List<Author> authors;
 
 }

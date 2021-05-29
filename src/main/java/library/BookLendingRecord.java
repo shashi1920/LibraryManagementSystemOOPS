@@ -1,9 +1,11 @@
 package library;
 
+import entity.Librarian;
 import entity.Member;
 import lombok.Builder;
+import lombok.Getter;
 
-@Builder
+@Builder @Getter
 public class BookLendingRecord {
     private static int id = 0;
 
@@ -13,6 +15,7 @@ public class BookLendingRecord {
     Member member;
     BookItem bookItem;
     LendingStatus status;
+    Librarian librarian;
 
     public enum LendingStatus {
         INITIATED,
